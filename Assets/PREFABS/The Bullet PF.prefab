@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8957135838402172932}
   - component: {fileID: 5099857216421409064}
   - component: {fileID: 3769822960788736743}
+  - component: {fileID: 2624720265564942427}
   m_Layer: 0
   m_Name: The Bullet PF
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.251, y: 1.21653, z: 0.998}
-  m_LocalScale: {x: 0.28253344, y: 0.28253344, z: 0.28253344}
+  m_LocalScale: {x: 0.1277023, y: 0.1277023, z: 0.1277023}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +101,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -133,3 +134,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2624720265564942427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170844098841602269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39b20e8a28ee3b499f858d4e7a8018b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

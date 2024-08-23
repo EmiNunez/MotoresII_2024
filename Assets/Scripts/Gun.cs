@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -29,8 +30,8 @@ public class Gun : MonoBehaviour
         {
             GameObject BulletClone = Instantiate(BulletPrefab);
             BulletClone.transform.position = spawnPoint.position;
-            BulletClone.transform.rotation = spawnPoint.rotation;
-            BulletClone.GetComponent<Rigidbody>().AddForce(spawnPoint.transform.forward * 100.0f);
+            //BulletClone.transform.rotation = spawnPoint.rotation;
+            BulletClone.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * 1000.0f);
         }
         
     }
