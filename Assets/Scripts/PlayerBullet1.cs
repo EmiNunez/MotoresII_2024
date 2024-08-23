@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerBullet1 : MonoBehaviour
 {
-    private IEnumerator Countdown()
+    private IEnumerator CR_Countdown()
     {
         //Counts 1 second
         //Destroys the the game object
         while (true) {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); //Primero retorna esto, activando WaitForSeconds antes de lo siguiente
             Destroy(this.gameObject);
         }   
     }
@@ -24,7 +24,7 @@ public class PlayerBullet1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Countdown());    
+        StartCoroutine(CR_Countdown());    
     }
 
     // Update is called once per frame
