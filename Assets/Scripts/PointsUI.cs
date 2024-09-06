@@ -4,7 +4,7 @@ using TMPro; // Estoy usando el plugin Text Mesh Pro
 using UnityEngine;
 using UnityEngine.UI; //Muy Importante si trabajas con UI
 
-public class PointsUI : MonoBehaviour
+public class PointsUI : GameMonoBehaviour
 {
     //Les variables
     public TMP_Text scoreText;
@@ -25,5 +25,10 @@ public class PointsUI : MonoBehaviour
     }
     public void OnClick_SubtractPoints() {
         PointManager.instance.RemovePoints(3);
+    }
+
+    public void OnClick_WinRaffleEvent()
+    {
+        Invoke<WinRaffle_Event>(new WinRaffle_Event());//New, porque es un evento nuevo e independiente.
     }
 }
