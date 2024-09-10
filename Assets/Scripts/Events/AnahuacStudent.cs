@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnahuacStudent : GameMonoBehaviour
+public class AnahuacStudent : MonoBehaviour
 {
     private void Start()
     {
-        AddEventListener<WinRaffle_Event>(WinRaffle);
+        EventManager.m_Instance.AddListener<WinRaffle_Event>(WinRaffle);
     }
-    public void WinRaffle(WinRaffle_Event _event)
+    private void WinRaffle(WinRaffle_Event _event)
     {
         Debug.Log("GANE UNA RIFA!");
     }
