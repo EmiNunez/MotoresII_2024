@@ -29,6 +29,14 @@ public class PointsUI : GameMonoBehaviour
 
     public void OnClick_WinRaffleEvent()
     {
-        Invoke<WinRaffle_Event>(new WinRaffle_Event());//New, porque es un evento nuevo e independiente.
+        EventManager.m_Instance.InvokeEvent<WinRaffle_Event>(new WinRaffle_Event());//New, porque es un evento nuevo e independiente.
+    }
+
+    public void OnClick_NoLlegoElProfeEvent()
+    {
+        object[] parameter = new object[2];
+        parameter[0] = "Motores 2";
+        parameter[1] = Color.red;
+        EventManager.m_Instance.InvokeEvent<NoLLegoElProfeEvent>(new NoLLegoElProfeEvent());
     }
 }

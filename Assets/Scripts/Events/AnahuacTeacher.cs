@@ -7,7 +7,7 @@ public class AnahuacTeacher : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        AddEventListener<WinRaffle_Event>(WinRaffle);
+        EventManager.m_Instance.AddListener<WinRaffle_Event>(WinRaffle);
     }
     public void WinRaffle(WinRaffle_Event _event)
     {
