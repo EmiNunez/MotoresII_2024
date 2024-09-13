@@ -28,9 +28,15 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            /*
             GameObject BulletClone = Instantiate(BulletPrefab);
             BulletClone.transform.position = spawnPoint.position;
             //BulletClone.transform.rotation = spawnPoint.rotation;
+            BulletClone.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * 1000.0f);
+            */
+
+            PlayerBullet1 BulletClone = null;
+            PoolManager.Instance.SpawnObject<PlayerBullet1>(out BulletClone, BulletPrefab, spawnPoint.position, spawnPoint.rotation, PoolManager.PoolType.GameObjects); // out BulletClone llena el valor de BulletClone. a out se le pasa una variable del tipo solicitado, se cambia en la funcion en la que se pasa.
             BulletClone.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * 1000.0f);
         }
         

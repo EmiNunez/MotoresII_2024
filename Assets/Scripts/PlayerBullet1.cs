@@ -10,7 +10,8 @@ public class PlayerBullet1 : MonoBehaviour
         //Destroys the the game object
         while (true) {
             yield return new WaitForSeconds(1); //Primero retorna esto, activando WaitForSeconds antes de lo siguiente
-            Destroy(this.gameObject);
+            ///Destroy(this.gameObject);
+            PoolManager.Instance.ReturnObjectToPool(this.gameObject);
         }   
     }
 
@@ -18,7 +19,8 @@ public class PlayerBullet1 : MonoBehaviour
     {
         //On collision
         //Destroys the game object
-        Destroy(this.gameObject);
+        /// Destroy(this.gameObject);
+        PoolManager.Instance.ReturnObjectToPool(this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -31,5 +33,15 @@ public class PlayerBullet1 : MonoBehaviour
     void Update()
     {
      
+    }
+
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
     }
 }
