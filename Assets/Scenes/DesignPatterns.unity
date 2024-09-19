@@ -484,7 +484,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 848891117}
         m_TargetAssemblyTypeName: PointsUI, Assembly-CSharp
-        m_MethodName: OnClick_NoLlegoElProfeEvent
+        m_MethodName: OnClick_WinRaffleEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

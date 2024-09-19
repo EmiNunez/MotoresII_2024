@@ -33,5 +33,9 @@ public class NoteManager : MonoBehaviour
         notes++;
     }
 
+    public void newNote()
+    {
+        EventManager.m_Instance.InvokeEvent<PlayNote_Event>(new PlayNote_Event());
+    }
    
 }
