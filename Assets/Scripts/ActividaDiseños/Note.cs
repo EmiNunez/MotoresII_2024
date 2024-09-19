@@ -20,7 +20,15 @@ public class Note : MonoBehaviour
     {
         StartCoroutine(CR_Countdown());
     }
+    private void OnEnable()
+    {
 
+    }
+
+    private void OnDisable()
+    {
+
+    }
 
 
 }

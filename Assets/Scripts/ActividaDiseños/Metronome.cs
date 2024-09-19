@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Metronome : MonoBehaviour
 {
-    public GameObject notePrefab;
+    [SerializeField] private GameObject notePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +15,15 @@ public class Metronome : MonoBehaviour
 
     private void PlayNote(PlayNote_Event e)  //Invoca un evento
     {
-        Note newNote;
+        Note newNote = null;
         PoolManager.Instance.SpawnObject<Note>(out newNote, notePrefab, this.transform);
     }
 
     private void Update()
     {
-        this.gameObject.transform.position += new Vector3(0, 1, 0);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            PlayNote(new PlayNote_Event());
+            EventManager.m_Instance.InvokeEvent<PlayNote_Event>(new PlayNote_Event()); ;
         }
     }
 }

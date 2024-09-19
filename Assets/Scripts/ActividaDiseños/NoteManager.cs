@@ -21,9 +21,16 @@ public class NoteManager : MonoBehaviour
         }
     }
 
+    private int notes = 0;
+
+    public int getNotes()
+    {
+        return notes;
+    }
     public void Add_Note() 
     {
-        EventManager.m_Instance.InvokeEvent<PlayNote_Event>(new PlayNote_Event());
+        //EventManager.m_Instance.InvokeEvent<PlayNote_Event>(new PlayNote_Event());
+        notes++;
     }
 
    
