@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: X Bot@Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: bcda3358bc74b4240babc325b6576aad,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 76250232633a7a6488d1e4ab903eebb4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -585,6 +590,11 @@ GameObject:
   - component: {fileID: 1684148805}
   - component: {fileID: 1684148804}
   - component: {fileID: 1684148808}
+  - component: {fileID: 1684148810}
+  - component: {fileID: 1684148809}
+  - component: {fileID: 1684148811}
+  - component: {fileID: 1684148813}
+  - component: {fileID: 1684148812}
   m_Layer: 0
   m_Name: TheENEMY
   m_TagString: Untagged
@@ -633,7 +643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   States:
   - StateName: Idle
-    Actions: []
+    Actions:
+    - {fileID: 1684148811}
     Transitions:
     - Decision: {fileID: 1684148805}
       TrueState: Follow
@@ -641,7 +652,20 @@ MonoBehaviour:
   - StateName: Follow
     Actions:
     - {fileID: 1684148804}
-    Transitions: []
+    Transitions:
+    - Decision: {fileID: 1684148810}
+      TrueState: ReturnOrigin
+      FalseState: 
+    - Decision: {fileID: 1684148809}
+      TrueState: ReturnOrigin
+      FalseState: 
+  - StateName: ReturnOrigin
+    Actions:
+    - {fileID: 1684148813}
+    Transitions:
+    - Decision: {fileID: 1684148812}
+      TrueState: Idle
+      FalseState: 
   BrainActive: 1
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -682,6 +706,75 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0.5, z: 0.5}
+--- !u!114 &1684148809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684148803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bb40244dcacdf4ebb9e8a6d30fccd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &1684148810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684148803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42e27c7ee173924da6ba79b35cd06a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+  maxTime: 0
+--- !u!114 &1684148811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684148803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce92c339e9709946a4fb3df2a17f986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &1684148812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684148803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f29f1245f23c0c4bbc3988b7191e660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+  originPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1684148813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684148803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a7612622352674eaa6a85be236d492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+  originPos: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!1 &1852729062
 GameObject:
   m_ObjectHideFlags: 0
